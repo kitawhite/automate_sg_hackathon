@@ -29,6 +29,18 @@ streamlit run app.py            # opens the dashboard
 > `meteostat`, `streamlit`, `plotly`, `anthropic` are optional upgrades — the code falls
 > back gracefully (scikit-learn models, template brief). Tests: `python tests/test_pipeline.py`.
 
+### Optional: live Claude brief
+
+The dashboard's controller brief is a built-in template by default. To have Claude write
+it live instead, copy the env template and add your key — no code changes needed:
+
+```bash
+cp .env.example .env          # then edit .env and paste your ANTHROPIC_API_KEY
+```
+
+`config.py` loads `.env` at startup (via `python-dotenv`); with a key present the dashboard
+calls `claude-haiku-5-5`, otherwise it uses the template. `.env` is gitignored — never commit it.
+
 ## Module map (matches the build spec)
 
 | File | Role | PortSync ancestor |

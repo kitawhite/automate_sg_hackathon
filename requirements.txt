@@ -14,3 +14,4 @@ streamlit>=1.30
 plotly>=5.18
 # LLM brief (optional - copilot falls back to a template without it)
 anthropic>=0.40
+python-dotenv>=1.0   # loads .env (e.g. ANTHROPIC_API_KEY) at startup

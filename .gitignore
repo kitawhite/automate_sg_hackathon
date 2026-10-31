@@ -1,8 +1,13 @@
 __pycache__/
 *.pyc
 .DS_Store
+# editor / office lock & temp files
+~$*
 .venv/
 venv/
+# secrets - never commit the real key
+.env
+.env.local
 # generated artifacts (regenerate with `python -m aerocast.pipeline`)
 artifacts/*.csv
 artifacts/*.json

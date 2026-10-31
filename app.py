@@ -157,7 +157,7 @@ with colB:
                                 float(row["lo"]), float(row["hi"]), float(row["typical"]),
                                 drivers.get("drivers", {}).get("aar", []), nrisk,
                                 copilot.confidence_tier(float(row["hi"] - row["lo"]), max(float(row["typical"]), 1)),
-                                use_llm=False)
+                                use_llm=True)   # live Claude brief when ANTHROPIC_API_KEY is set (.env), else template
             st.write(txt)
 
 # ---- failure case + honest panel --------------------------------------------

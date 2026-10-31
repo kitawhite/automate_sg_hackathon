@@ -7,6 +7,16 @@ DATA_CSV = ROOT / "sources" / "Flight_Data_With_Weather_Final.csv"
 ARTIFACTS = ROOT / "artifacts"
 ARTIFACTS.mkdir(exist_ok=True)
 
+# Load environment variables from a local .env at the repo root (e.g.
+# ANTHROPIC_API_KEY for the optional live Claude brief). config is imported by
+# every module, so this runs once, early. Harmless if python-dotenv isn't
+# installed or no .env exists.
+try:
+    from dotenv import load_dotenv
+    load_dotenv(ROOT / ".env")
+except Exception:
+    pass
+
 # --- Focus airports and their (assumed) runway headings in degrees. -----------
 # The brief fixes ATL ops to heading 080 and DFW to 180. The pipeline accepts
 # any ICAO/IATA code present in the data; these two are what we validate on.
