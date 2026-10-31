@@ -8,3 +8,5 @@ artifacts/*.csv
 artifacts/*.json
 artifacts/*.joblib
 !artifacts/.gitkeep
+
+sources/
