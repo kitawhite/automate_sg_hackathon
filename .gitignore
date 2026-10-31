@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+# generated artifacts (regenerate with `python -m aerocast.pipeline`)
+artifacts/*.csv
+artifacts/*.json
+artifacts/*.joblib
+!artifacts/.gitkeep
